@@ -54,13 +54,9 @@ public class FXHelloCVController {
         File xmlConfig = new File(getClass().getResource("lbpcascade_frontalface.xml").getPath());
         faceDetector = new CascadeClassifier(xmlConfig.getAbsolutePath());
 
-		/*if(faceDetector.empty()) {
-            boolean result = faceDetector.load("D:/Projects/javafx/first-try/target/classes/org/silentpom/javafx/first/lbpcascade_frontalface.xml");
-			if(!result) {
-				throw new RuntimeException("No detector");
-			}
-
-		}*/
+		if(faceDetector.empty()) {
+            throw new RuntimeException("No detector on path: " + xmlConfig.getAbsolutePath());
+		}
     }
 
     /**
