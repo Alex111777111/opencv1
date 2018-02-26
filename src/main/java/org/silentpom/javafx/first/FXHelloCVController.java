@@ -97,7 +97,6 @@ public class FXHelloCVController {
 
                 this.timer = Executors.newSingleThreadScheduledExecutor();
                 this.timer.scheduleAtFixedRate(frameGrabber, 0, 33, TimeUnit.MILLISECONDS);
-                //this.timer.scheduleAtFixedRate(frameGrabber, 0, 100, TimeUnit.MILLISECONDS);
 
                 // update the button content
                 this.button.setText("Stop Camera");
